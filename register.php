@@ -80,7 +80,8 @@ try {
     $result = $stmt->get_result();
     
     if ($result->num_rows > 0) {
-        throw new Exception("This email address is already registered");
+        echo json_encode(['success' => false, 'emailExists' => true, 'message' => 'Email already registered']);
+exit;
     }
     $stmt->close();
     

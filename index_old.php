@@ -13,9 +13,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- Toastr CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+<!-- jQuery (required by Toastr) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <style>
         * {
@@ -384,130 +390,6 @@
             100% { transform: rotate(360deg); }
         }
         
-        /* WhatsApp Modal Styles */
-        .whatsapp-modal {
-            display: none;
-            position: fixed;
-            z-index: 10000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            animation: fadeIn 0.3s ease;
-        }
-        
-        .whatsapp-modal.show {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .whatsapp-modal-content {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-            animation: slideUp 0.3s ease;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-        
-        .whatsapp-modal-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 28px;
-            font-weight: bold;
-            color: #999;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        
-        .whatsapp-modal-close:hover {
-            color: #333;
-        }
-        
-        .whatsapp-icon {
-            width: 80px;
-            height: 80px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            animation: bounce 1s infinite;
-        }
-        
-        .whatsapp-icon i {
-            font-size: 40px;
-            color: white;
-        }
-        
-        .whatsapp-modal h3 {
-            color: #001f3f;
-            font-size: 28px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        
-        .whatsapp-modal p {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-            font-size: 16px;
-        }
-        
-        .btn-whatsapp:hover {
-            background: #128C7E;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-            color: white;
-        }
-        
-        .btn-whatsapp i {
-            margin-right: 10px;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
         .footer {
             background: #001f3f;
             color: white;
@@ -536,107 +418,6 @@
             background: #f8f9fa !important;
         }
         
-        .program-details-section {
-            background-color: #f8f9fb;
-            padding: 80px 20px;
-            font-family: 'Poppins', sans-serif;
-            color: #0b1a34;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-header h3 {
-            color: #d72638;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-        
-        .section-header h2 {
-            color: #0b1a34;
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        
-        .detail-card {
-            background: #fff;
-            border-radius: 14px;
-            border-top: 5px solid #d72638;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            padding: 25px 30px;
-        }
-        
-        .detail-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-        }
-        
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .card-header .icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #0b1a34;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            flex-shrink: 0;
-        }
-        
-        .card-header h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #0b1a34;
-        }
-        
-        .card-body p {
-            margin-bottom: 6px;
-            color: #333;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-        
-        .card-body ul {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
-        }
-        
-        .card-body ul li {
-            margin-bottom: 6px;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .card-body ul li::before {
-            content: "✓";
-            color: #d72638;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 32px;
@@ -653,14 +434,6 @@
             .nav-menu {
                 flex-direction: column;
                 gap: 15px;
-            }
-            
-            .details-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .detail-card {
-                padding: 20px;
             }
         }
     </style>
@@ -822,6 +595,119 @@
         </div>
     </section>
     
+    <style>
+    .program-details-section {
+        background-color: #f8f9fb;
+        padding: 80px 20px;
+        font-family: 'Poppins', sans-serif;
+        color: #0b1a34; /* Navy */
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .section-header h3 {
+        color: #d72638; /* Red */
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+    
+    .section-header h2 {
+        color: #0b1a34;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    
+    .details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+        gap: 30px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    
+    .detail-card {
+        background: #fff;
+        border-radius: 14px;
+        border-top: 5px solid #d72638;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        padding: 25px 30px;
+    }
+    
+    .detail-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+    
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .card-header .icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #0b1a34;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        flex-shrink: 0;
+    }
+    
+    .card-header h4 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #0b1a34;
+    }
+    
+    .card-body p {
+        margin-bottom: 6px;
+        color: #333;
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+    
+    .card-body ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    
+    .card-body ul li {
+        margin-bottom: 6px;
+        position: relative;
+        padding-left: 20px;
+    }
+    
+    .card-body ul li::before {
+        content: "✓";
+        color: #d72638;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+    
+    @media (max-width: 768px) {
+        .details-grid {
+            grid-template-columns: 1fr;
+        }
+    
+        .detail-card {
+            padding: 20px;
+        }
+    }
+    </style>
+    
     <section id="register" class="section">
         <div class="container">
             <div class="section-title">
@@ -903,21 +789,6 @@
         </div>
     </section>
 
-    <!-- WhatsApp Modal -->
-    <div id="whatsappModal" class="whatsapp-modal">
-        <div class="whatsapp-modal-content">
-            <span class="whatsapp-modal-close" onclick="closeWhatsAppModal()">&times;</span>
-            <div class="whatsapp-icon">
-                <i class="fab fa-whatsapp"></i>
-            </div>
-            <h3>Join Our WhatsApp Group!</h3>
-            <p>Stay connected and receive updates about the program. Click the button below to join our exclusive WhatsApp community.</p>
-            <a href="https://chat.whatsapp.com/BVw2AfC9Cbe1gagcyqNtXq?mode=wwt" target="_blank" class="btn-whatsapp" onclick="trackWhatsAppClick()">
-                <i class="fab fa-whatsapp"></i> Join WhatsApp Group
-            </a>
-        </div>
-    </div>
-
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -942,34 +813,13 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 The Rhema House. All Rights Reserved.</p>
+                <p>&copy; 2026 The Rhema House Me. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
-        // WhatsApp Modal Functions
-        function showWhatsAppModal() {
-            document.getElementById('whatsappModal').classList.add('show');
-        }
-        
-        function closeWhatsAppModal() {
-            document.getElementById('whatsappModal').classList.remove('show');
-        }
-        
-        function trackWhatsAppClick() {
-            console.log('User clicked WhatsApp group link');
-        }
-        
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('whatsappModal');
-            if (event.target === modal) {
-                closeWhatsAppModal();
-            }
-        }
-        
         // Form validation and AJAX submission
         const form = document.getElementById('registrationForm');
         const alertMessage = document.getElementById('alertMessage');
@@ -1071,22 +921,23 @@
         });
         
         function showAlert(message, type) {
-            switch (type) {
-                case 'success':
-                    toastr.success(message);
-                    break;
-                case 'error':
-                    toastr.error(message);
-                    break;
-                case 'warning':
-                    toastr.warning(message);
-                    break;
-                case 'info':
-                default:
-                    toastr.info(message);
-                    break;
-            }
-        }
+    // type can be 'success', 'error', 'warning', or 'info'
+    switch (type) {
+        case 'success':
+            toastr.success(message);
+            break;
+        case 'error':
+            toastr.error(message);
+            break;
+        case 'warning':
+            toastr.warning(message);
+            break;
+        case 'info':
+        default:
+            toastr.info(message);
+            break;
+    }
+}
 
         // Form submission
         form.addEventListener('submit', function(e) {
@@ -1132,7 +983,8 @@
             submitBtn.disabled = true;
             btnText.innerHTML = '<span class="spinner"></span>Submitting...';
             
-            // AJAX request
+            // AJAX request simulation
+            // In production, replace this with actual AJAX call to your PHP endpoint
             fetch('register.php', {
                 method: 'POST',
                 body: formData
@@ -1149,13 +1001,6 @@
                     ['firstName', 'lastName', 'email', 'phone', 'category', 'attendance'].forEach(fieldId => {
                         document.getElementById(fieldId).classList.remove('success');
                     });
-                    
-                    // Show WhatsApp modal after 1 second
-                    setTimeout(showWhatsAppModal, 1000);
-                } else if (data.emailExists) {
-                    // Email already exists - show message and WhatsApp modal
-                    showAlert('This email is already registered. Join our WhatsApp group for updates!', 'info');
-                    setTimeout(showWhatsAppModal, 1000);
                 } else {
                     showAlert(data.message || 'Registration failed. Please try again.', 'error');
                 }
@@ -1172,9 +1017,6 @@
                     const field = document.getElementById(fieldId);
                     if (field) field.classList.remove('success');
                 });
-                
-                // Show WhatsApp modal after 1 second (for demo)
-                setTimeout(showWhatsAppModal, 1000);
             });
         });
         
