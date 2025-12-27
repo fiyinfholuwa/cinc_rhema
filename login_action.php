@@ -13,7 +13,7 @@ if($username == "" || $password == ""){
     exit;
 }
 
-$stmt = $conn->prepare("SELECT id, username, password FROM users WHERE username = ?");
+$stmt = $conn->prepare("SELECT id, username, password FROM admin_login WHERE username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
