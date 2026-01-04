@@ -20,9 +20,21 @@ try {
     $partnerName = trim($_POST['partnerName'] ?? '');
     $message = trim($_POST['message'] ?? '');
     
+
     // Validation
     $errors = array();
     
+    // Registration closing date check
+$today = new DateTime(); // now
+$closingDate = new DateTime('2026-01-03 23:59:59'); // adjust year if needed
+
+if ($today > $closingDate) {
+    $errors[] = "Registration has closed for this cohort, kindly reach out to administration";
+}
+
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Valid email address is required";
+    }
     if (empty($firstName) || strlen($firstName) < 2) {
         $errors[] = "First name is required and must be at least 2 characters";
     }
